@@ -1,0 +1,27 @@
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  width: 80%;
+  padding: 0 10%;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  border-bottom: 1px solid #c9c9c9;
+  place-content: flex-start;
+  place-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.arrowBack {
+  font-size: x-large;
+  margin: 0 10px;
+  border-right: 2px solid #e6e6e6;
+  margin-right: 15px;
+  padding-right: 15px;
+}

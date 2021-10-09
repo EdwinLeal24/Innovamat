@@ -1,9 +1,9 @@
 .appHeader {
   display: flex;
   justify-content: center;
-  width: 1438px;
   height: 70px;
   border-bottom: 1px solid #c9c9c9;
+  width: 100%;
 }
 
 .navButton {

@@ -8,6 +8,7 @@ import {
   favoriteCard,
 } from "./Items.module.css";
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Items({ items }) {
   const sectionsItems = items.map((item) => {
@@ -22,23 +23,29 @@ export default function Items({ items }) {
 
         <ul className={containerCards}>
           {resources.map((source, index) => {
-            const { image, title, description } = source;
+            const { id, image, tag, title, description } = source;
             return (
-              <li key={index} className={card}>
-                <div>
-                  <img src={image} className={cardImage} />
-                  <h4 className={cardTitle}>{title}</h4>
-                  <p className={cardDescription}>{description}</p>
-                </div>
-                <div>
-                  <button className={favoriteCard}>
-                    <span>
-                      <FaHeart />
-                    </span>{" "}
-                    Favorito
-                  </button>
-                </div>
-              </li>
+              <Link to={`/resource/${id}`} className={card}>
+                <li key={index}>
+                  <div>
+                    <img
+                      src={image}
+                      alt={("image", tag)}
+                      className={cardImage}
+                    />
+                    <h4 className={cardTitle}>{title}</h4>
+                    <p className={cardDescription}>{description}</p>
+                  </div>
+                  <div>
+                    <button className={favoriteCard}>
+                      <span>
+                        <FaHeart />
+                      </span>{" "}
+                      Favorito
+                    </button>
+                  </div>
+                </li>
+              </Link>
             );
           })}
         </ul>
