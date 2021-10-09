@@ -1,0 +1,13 @@
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.favorites {
+  color: #18c6ca;
+}
+
+.icon {
+  margin: 5px;
+}

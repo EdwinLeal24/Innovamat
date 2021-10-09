@@ -1,0 +1,45 @@
+.itemTitle {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  border-bottom: 2px solid #e6e6e6;
+  padding-bottom: 10px;
+}
+
+.containerCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  place-items: center;
+  flex-grow: 1;
+  max-width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 14px 0 #e6e6e6;
+}
+
+.cardImage {
+  border-radius: 10px;
+}
+
+.cardTitle {
+  padding-top: 5px;
+}
+
+.cardDescription {
+  margin: 0;
+  padding: 5px 0 10px 0;
+}
+
+.favoriteCard {
+  color: #18c6ca;
+}
