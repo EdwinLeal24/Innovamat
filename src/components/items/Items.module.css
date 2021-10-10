@@ -10,6 +10,8 @@
 .containerCards {
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px 0;
 }
 
 .card {
@@ -18,9 +20,12 @@
   justify-content: space-between;
   place-items: center;
   flex-grow: 1;
-  max-width: 30%;
+  flex-basis: 200px;
+  max-width: 200px;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  /* margin: 2px; */
 }
 
 .card:hover {
@@ -43,4 +48,6 @@
 
 .favoriteCard {
   color: #18c6ca;
+  margin: 0;
+  font-size: medium;
 }

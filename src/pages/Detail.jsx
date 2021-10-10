@@ -2,14 +2,12 @@ import { useFetch } from "../hooks/useFetch";
 import { useHistory, useLocation } from "react-router";
 import { detailContent, detailHeader, arrowBack } from "./Detail.module.css";
 import { FaChevronLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 export default function Deatil() {
   const location = useLocation();
   const keyword = location.pathname;
   const history = useHistory();
 
-  console.log("history", history);
   const { title, description, videoId } = useFetch(keyword);
   const video = `https://www.youtube.com/embed/${videoId}`;
 
