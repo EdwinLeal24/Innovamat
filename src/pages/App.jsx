@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import style from "./App.module.css";
 import Header from "../components/Header";
-import Talleres from "../components/Talleres";
-import Rincones from "../components/Rincones";
-import Deatil from "./Detail";
+import router from "../routing/router";
 
 function App() {
   return (
@@ -12,15 +10,14 @@ function App() {
         <Header />
         <Switch>
           <main className={style.main}>
-            <Route path="/rincones">
-              <Rincones />
-            </Route>
-            <Route exact path="/">
-              <Talleres />
-            </Route>
-            <Route path="/resource/:id">
-              <Deatil />
-            </Route>
+            {router.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.isExact}
+                component={route.component}
+              />
+            ))}
           </main>
         </Switch>
       </div>
