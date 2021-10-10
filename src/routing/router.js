@@ -6,29 +6,29 @@ import {
   FAVORITES_PATH,
 } from "./paths";
 
-// const { Talleres, Rincones, Detail } = views;
+const { Talleres, Rincones, Detail, Favorites } = views;
 
 export const TALLERES = {
   path: TALLERES_PATH,
-  component: views.Talleres,
+  component: Talleres,
   isExact: true,
 };
 
 export const RINCONES = {
   path: RINCONES_PATH,
-  component: views.Rincones,
+  component: Rincones,
   isExact: false,
 };
 
 export const DETAIL = {
   path: DETAIL_PATH,
-  component: views.Detail,
+  component: Detail,
   isExact: false,
 };
 
 export const FAVORITES = {
   path: FAVORITES_PATH,
-  component: views.Favorites,
+  component: Favorites,
   isExact: false,
 };
 
