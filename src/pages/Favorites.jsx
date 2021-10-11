@@ -1,26 +1,18 @@
 import { getFavorites } from "../services/handleFavorites";
-import { addFavorite } from "./Favorites.module.css";
 import GridCards from "../components/items/GridCards";
-import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { TALLERES_PATH } from "../routing/paths";
+import Dialog from "../components/Dialog";
 
 export default function Favorites() {
   const favorites = getFavorites();
+  const message = "Aún no has añadido recursos a tus favoritos ¿añadimos?";
   return (
     <>
       <h1>Favoritos</h1>
       {favorites ? (
         <GridCards resources={favorites} />
       ) : (
-        <section className={addFavorite}>
-          <h3>Aún no has añadido recursos a tus favoritos ¿añadimos?</h3>
-          <Link to={TALLERES_PATH}>
-            <p>
-              <FaArrowLeft />
-            </p>
-          </Link>
-        </section>
+        <Dialog message={message} link={TALLERES_PATH} />
       )}
     </>
   );

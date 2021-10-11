@@ -1,6 +1,7 @@
 import Items from "../components/items/Items";
 import { useFetch } from "../hooks/useFetch";
 import SectionHeader from "../components/SectionHeader";
+import Dialog from "../components/Dialog";
 export default function Talleres() {
   // const sortItems = (sectionName) => {
   //   console.log("click");
@@ -17,12 +18,15 @@ export default function Talleres() {
   //   console.log("sort", sort);
   // };
 
-  const talleres = useFetch();
+  const { items, loading, error } = useFetch();
+  const message = error
+    ? "Parece que ha habido un error!"
+    : "Buscando talleres...";
 
   return (
     <>
       <SectionHeader heading="Talleres" />
-      <Items items={talleres} />
+      {loading ? <Dialog message={message} /> : <Items items={items} />}
     </>
   );
 }
