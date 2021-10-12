@@ -19,13 +19,10 @@
   flex-direction: column;
   justify-content: space-between;
   place-items: center;
-  flex-grow: 1;
-  flex-basis: 200px;
-  max-width: 200px;
+  width: 200px;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #e6e6e6;
-  /* margin: 2px; */
 }
 
 .card:hover {
@@ -50,4 +47,10 @@
   color: #18c6ca;
   margin: 0;
   font-size: medium;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
 }

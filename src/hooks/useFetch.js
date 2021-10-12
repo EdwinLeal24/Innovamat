@@ -8,6 +8,7 @@ export function useFetch(keyword) {
 
   useEffect(() => {
     setLoading(true);
+
     fetch(`${API_URL}${keyword ? keyword : "/talleres"}`)
       .then((resp) => resp.json())
       .then((items) => {

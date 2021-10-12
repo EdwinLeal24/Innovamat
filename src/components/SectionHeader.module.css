@@ -4,10 +4,23 @@
   place-items: center;
 }
 
+.favoritesHeader {
+  display: flex;
+  justify-content: end;
+  margin: 10px 0;
+}
+
 .favorites {
   color: #18c6ca;
 }
 
 .icon {
   margin: 5px;
+}
+
+@media (max-width: 500px) {
+  .sectionTitle {
+    place-items: initial;
+    margin-top: 5px;
+  }
 }
