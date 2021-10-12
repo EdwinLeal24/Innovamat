@@ -1,14 +1,23 @@
 import { getFavorites } from "../services/handleFavorites";
-import GridCards from "../components/items/GridCards";
+import { useHistory } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import { TALLERES_PATH } from "../routing/paths";
+import { buttonBack } from "./Favorite.module.css";
+import GridCards from "../components/items/GridCards";
 import Dialog from "../components/Dialog";
 
 export default function Favorites() {
+  const history = useHistory();
   const favorites = getFavorites();
   const message = "Aún no has añadido recursos a tus favoritos ¿añadimos?";
   return (
     <>
-      <h1>Favoritos</h1>
+      <h1>
+        <button onClick={() => history.goBack()} className={buttonBack}>
+          <FaArrowLeft />
+        </button>
+        <span>Favoritos</span>
+      </h1>
       {favorites ? (
         <GridCards resources={favorites} />
       ) : (
