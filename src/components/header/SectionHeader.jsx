@@ -6,8 +6,8 @@ import {
 } from "./SectionHeader.module.css";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FAVORITES_PATH } from "../routing/paths";
-import { useWindowWidth } from "../hooks/useWindowWidth";
+import { FAVORITES_PATH } from "../../routing/paths";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export default function SectionHeader({ heading }) {
   const isMobileWindow = useWindowWidth();

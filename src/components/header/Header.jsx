@@ -5,11 +5,11 @@ import {
   activeButton,
   navBar,
 } from "./Header.module.css";
-import { TALLERES_PATH, RINCONES_PATH } from "../routing/paths";
+import { TALLERES_PATH, RINCONES_PATH } from "../../routing/paths";
 import { useState } from "react";
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { GiMountainCave } from "react-icons/gi";
-import { useWindowWidth } from "../hooks/useWindowWidth";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export default function Header() {
   const [active, setActive] = useState(true);

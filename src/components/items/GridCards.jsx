@@ -1,18 +1,35 @@
+import { useEffect, useState } from "react";
 import { containerCards } from "./Items.module.css";
-import Card from "./Card";
 import { addFavorite, removeFavorite } from "../../services/handleFavorites.js";
+import Card from "./Card";
 
-export default function GridCards({ resources }) {
-  const changeFavorite = (source, isFavorite) => {
-    isFavorite ? addFavorite(source) : removeFavorite(source.id);
+export default function GridCards({ resources, sort }) {
+  const [list, setList] = useState(resources);
+
+  useEffect(() => {
+    const sortedItems = sort
+      ? resources.sort((a, b) => b.title.localeCompare(a.title))
+      : resources.sort((a, b) => a.title.localeCompare(b.title));
+    setList(sortedItems);
+  }, [sort]);
+
+  const addFavorites = (source) => {
+    addFavorite(source);
   };
+
+  const deleteFavorite = (id) => {
+    let favorites = removeFavorite(id);
+    setList(favorites);
+  };
+
   return (
     <ul className={containerCards}>
-      {resources.map((source, index) => (
+      {list.map((source, index) => (
         <Card
           source={source}
           key={index + source.id}
-          changeFavorite={changeFavorite}
+          addFavorites={addFavorites}
+          removeFavorite={deleteFavorite}
         />
       ))}
     </ul>

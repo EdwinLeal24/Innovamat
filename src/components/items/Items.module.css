@@ -50,6 +50,10 @@
 }
 
 @media (max-width: 500px) {
+  .itemTitle {
+    justify-content: end;
+  }
+
   .card {
     width: 100%;
   }

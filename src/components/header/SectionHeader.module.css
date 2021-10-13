@@ -21,6 +21,17 @@
 @media (max-width: 500px) {
   .sectionTitle {
     place-items: initial;
+    background: #ededed;
     margin-top: 5px;
+  }
+
+  .favoritesHeader {
+    background: #ededed;
+    width: 100%;
+    margin: 0;
+  }
+
+  .favorites {
+    background: #ededed;
   }
 }

@@ -1,10 +1,9 @@
 .detailContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  place-items: center;
-  width: 100%;
+  width: 70%;
   padding: 0 10%;
+  margin: 0 auto;
 }
 
 .detailHeader {
@@ -19,9 +18,34 @@
 }
 
 .arrowBack {
-  font-size: x-large;
+  font-size: xx-large;
   margin: 0 10px;
   border-right: 2px solid #e6e6e6;
   margin-right: 15px;
   padding-right: 15px;
+}
+
+.mediaContainer {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.mediaResource {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.descriptionResource {
+  text-align: justify;
+}
+
+@media (max-width: 500px) {
+  .detailContent {
+    width: 100%;
+  }
 }

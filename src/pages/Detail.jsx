@@ -1,8 +1,15 @@
 import { useFetch } from "../hooks/useFetch";
 import { useHistory, useLocation } from "react-router";
-import { detailContent, detailHeader, arrowBack } from "./Detail.module.css";
+import {
+  detailContent,
+  detailHeader,
+  arrowBack,
+  mediaResource,
+  mediaContainer,
+  descriptionResource,
+} from "./Detail.module.css";
 import { FaChevronLeft } from "react-icons/fa";
-import Dialog from "../components/Dialog";
+import Dialog from "../components/dialog/Dialog";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 
 export default function Deatil() {
@@ -31,19 +38,18 @@ export default function Deatil() {
             {isMobileWindow ? <h4>{title}</h4> : <h2>{title}</h2>}
           </header>
 
-          <main className={detailContent}>
-            <div>
+          <div className={detailContent}>
+            <div className={mediaContainer}>
               <iframe
-                width="560"
-                height="315"
+                className={mediaResource}
                 src={video}
                 title={title}
                 frameBorder="0"
               />
             </div>
 
-            <p>{description}</p>
-          </main>
+            <p className={descriptionResource}>{description}</p>
+          </div>
         </div>
       )}
     </>
