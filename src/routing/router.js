@@ -4,9 +4,10 @@ import {
   RINCONES_PATH,
   DETAIL_PATH,
   FAVORITES_PATH,
+  NOT_FOUND_PATH,
 } from "./paths";
 
-const { Talleres, Rincones, Detail, Favorites } = views;
+const { Talleres, Rincones, Detail, Favorites, NotFound } = views;
 
 export const TALLERES = {
   path: TALLERES_PATH,
@@ -32,4 +33,10 @@ export const FAVORITES = {
   isExact: false,
 };
 
-export default [TALLERES, RINCONES, DETAIL, FAVORITES];
+export const NOT_FOUND = {
+  path: NOT_FOUND_PATH,
+  component: NotFound,
+  isExact: false,
+};
+
+export default [TALLERES, RINCONES, DETAIL, FAVORITES, NOT_FOUND];
