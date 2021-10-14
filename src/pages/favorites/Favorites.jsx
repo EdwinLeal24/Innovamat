@@ -1,10 +1,10 @@
-import { getFavorites } from "../services/handleFavorites";
+import { getFavorites } from "../../services/handleFavorites";
 import { useHistory } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import { TALLERES_PATH } from "../routing/paths";
+import { TALLERES_PATH } from "../../routing/paths";
 import { buttonBack } from "./Favorite.module.css";
-import GridCards from "../components/items/GridCards";
-import Dialog from "../components/dialog/Dialog";
+import GridCards from "../../components/items/GridCards";
+import Dialog from "../../components/dialog/Dialog";
 
 export default function Favorites() {
   const history = useHistory();

@@ -1,8 +1,8 @@
-import Items from "../components/items/Items";
-import { useFetch } from "../hooks/useFetch";
-import SectionHeader from "../components/header/SectionHeader";
-import Dialog from "../components/dialog/Dialog";
-import { useWindowWidth } from "../hooks/useWindowWidth";
+import Items from "../../components/items/Items";
+import { useFetch } from "../../hooks/useFetch";
+import SectionHeader from "../../components/header/SectionHeader";
+import Dialog from "../../components/dialog/Dialog";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export default function Talleres() {
   const { items, loading, error } = useFetch();

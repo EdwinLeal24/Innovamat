@@ -1,4 +1,4 @@
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { useHistory, useLocation } from "react-router";
 import {
   detailContent,
@@ -9,8 +9,8 @@ import {
   descriptionResource,
 } from "./Detail.module.css";
 import { FaChevronLeft } from "react-icons/fa";
-import Dialog from "../components/dialog/Dialog";
-import { useWindowWidth } from "../hooks/useWindowWidth";
+import Dialog from "../../components/dialog/Dialog";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export default function Deatil() {
   const location = useLocation();
