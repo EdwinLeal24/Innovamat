@@ -1,7 +1,7 @@
 # Innovamat
 
-El objetivo del proyecto es dar a los alumnos la mejor solución para que puedan disponer de los recursos de una manera comoda y sencilla. 
-En esta web el alumno puede navegar para encontrar los recursos según su categoría, ordenarlos alfabeticamente o añadirlos a una lista de favoritos.
+El objetivo del proyecto es dar a los alumnos la mejor solución para que puedan disponer de los recursos de una manera cómoda y sencilla. 
+En esta web el alumno puede navegar para encontrar los recursos según su categoría, ordenarlos alfabéticamente o añadirlos a una lista de favoritos.
 
 https://innovamat.vercel.app/
 
@@ -15,9 +15,10 @@ $ npm run dev
 
 ## Construido con 🛠️
 
-El proyecto esta construido con React. He decidido crearlo con la herramienta Vite por su rapidez a la hora de compilar y por su ayuda en la perfomance del proyecto.
+El proyecto está construido con React. He decidido crearlo con la herramienta Vite por su rapidez a la hora de compilar y por su ayuda en la perfomance del proyecto.
 
 ## Directorio 🖇️
+
 ```
 src
  ┣ components
@@ -76,19 +77,19 @@ src
 Guarda cada uno de los componentes que componen la aplicación ordenados por subcarpetas
 
 ### Context
-En esta carpeta encontraras todo lo relacionado con el store de la app. He separado en diferentes archivos las acciones, los tipos y los dispatch. A medida que vaya creciendo la aplicacción se podría separar tambien por modulos. He decidido utilizar los patrones Redux porque en cuanto el proyeccto se haga más grande será mas facil controlarla desde un estado global. 
+En esta carpeta se encontrará todo lo relacionado con el store de la app. He separado en diferentes archivos las acciones, los tipos y los dispatch. A medida que vaya creciendo la aplicación se podría separar también por módulos. He decidido utilizar los patrones Redux porque en cuanto el proyecto se haga más grande, será más fácil controlarla desde un estado global. 
 
 ### Hooks
-He creado un hook para saber el size de la pantalla para la versión mobile. En caso de querer crear mas hook se guardarian en esta carpeta.
+He creado un hook para saber el size de la pantalla para la versión mobile. En caso de querer crear más hook, se guardarán en esta carpeta.
 
 ### Pages
 Cada archivo en esta carpeta es una ruta del proyecto, excepto el index que se encarga de hacer las importaciones de cada una de ellas en el momento en que se necesite. 
 
 ### Services
-Estan los servicios que se usaran en la aplicación, como por ejemplo las llamadas a la API y la instancia de axios. Cualquier petición a la base de datos, sea get, post, put.. se controlarían desde de aquí.
+Están los servicios que se usarán en la aplicación, como por ejemplo las llamadas a la API y la instancia de axios. Cualquier petición a la base de datos, sea get, post, put.. se controlarán desde aquí.
 
 ### routing
-Estan los archivos que controlan las rutas para simplificar la generación del componente switch a medida que crezca la aplicación
- 
+Están los archivos que controlan las rutas para simplificar la generación del componente switch a medida que crezca la aplicación
+
  
  
