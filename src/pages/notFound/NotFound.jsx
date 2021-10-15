@@ -1,5 +1,5 @@
-import Dialog from "../components/dialog/Dialog";
-import { TALLERES_PATH } from "../routing/paths";
+import Dialog from "../../components/dialog/Dialog";
+import { TALLERES_PATH } from "../../routing/paths";
 
 export default function NotFound() {
   return (

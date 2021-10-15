@@ -1,16 +1,18 @@
 import Items from "../../components/items/Items";
-import { useFetch } from "../../hooks/useFetch";
 import SectionHeader from "../../components/header/SectionHeader";
 import Dialog from "../../components/dialog/Dialog";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export default function Talleres() {
-  const { items, loading, error } = useFetch();
-  const message = error
-    ? "Parece que ha habido un error!"
-    : "Buscando talleres...";
+  const { listTalleres, isLoading, errorTalleres } = useContext(AppContext);
+
+  const message = isLoading && "Buscando talleres...";
 
   const isMobileWindow = useWindowWidth();
+
+  if (errorTalleres) return <Dialog message={errorTalleres} />;
 
   return (
     <>
@@ -21,7 +23,11 @@ export default function Talleres() {
         ) : (
           <SectionHeader heading="Talleres" />
         )}
-        {loading ? <Dialog message={message} /> : <Items items={items} />}
+        {isLoading ? (
+          <Dialog message={message} />
+        ) : (
+          <Items items={listTalleres} />
+        )}
       </main>
     </>
   );

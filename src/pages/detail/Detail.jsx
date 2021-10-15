@@ -1,5 +1,4 @@
-import { useFetch } from "../../hooks/useFetch";
-import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router";
 import {
   detailContent,
   detailHeader,
@@ -11,23 +10,26 @@ import {
 import { FaChevronLeft } from "react-icons/fa";
 import Dialog from "../../components/dialog/Dialog";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export default function Deatil() {
-  const location = useLocation();
-  const keyword = location.pathname;
+  const { resource, isLoading, errorResource } = useContext(AppContext);
+
   const history = useHistory();
 
-  const { items, loading, error } = useFetch(keyword);
-  const { title, description, videoId } = items;
+  const { title, description, videoId } = resource;
 
-  const message = error ? "Parece que ha habido un error!" : "Cargando...";
+  const message = "Cargando recurso...";
+
+  if (errorResource) return <Dialog message={errorResource} />;
 
   const video = `https://www.youtube.com/embed/${videoId}`;
 
   const isMobileWindow = useWindowWidth();
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <Dialog message={message} />
       ) : (
         <div>

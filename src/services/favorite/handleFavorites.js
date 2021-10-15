@@ -1,13 +1,22 @@
-let favorites = [];
+let favoritesSet = new Set([]);
+let favorites = null;
+
 export function addFavorite(source) {
-  favorites = favorites.concat(source);
+  favoritesSet = favoritesSet.add(source);
+  favorites = [...favoritesSet];
   localStorage.setItem("favoritesResources", JSON.stringify(favorites));
+
   return favorites;
 }
 
 export function removeFavorite(id) {
-  favorites = favorites && favorites.filter((source) => source.id !== id);
+  favoritesSet = new Set(
+    [...favoritesSet].filter((source) => source.id !== id)
+  );
+  favorites = [...favoritesSet];
+
   localStorage.setItem("favoritesResources", JSON.stringify(favorites));
+
   return favorites;
 }
 

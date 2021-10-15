@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { containerCards } from "./Items.module.css";
-import { addFavorite, removeFavorite } from "../../services/handleFavorites.js";
+import {
+  addFavorite,
+  removeFavorite,
+} from "../../services/favorite/handleFavorites";
 import Card from "./Card";
 
 export default function GridCards({ resources, sort }) {

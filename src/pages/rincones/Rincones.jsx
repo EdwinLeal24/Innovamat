@@ -1,18 +1,17 @@
-import { useLocation } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
 import SectionHeader from "../../components/header/SectionHeader";
 import Items from "../../components/items/Items";
 import Dialog from "../../components/dialog/Dialog";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export default function Rincones() {
-  const location = useLocation();
-  const { items, loading, error } = useFetch(location.pathname);
-  const message = error
-    ? "Parece que ha habido un error!"
-    : "Buscando Rincones...";
+  const { listRincones, errorRincones, isLoading } = useContext(AppContext);
+  const message = "Buscando Rincones...";
 
   const isMobileWindow = useWindowWidth();
+
+  if (errorRincones) return <Dialog message={errorRincones} />;
 
   return (
     <>
@@ -23,7 +22,11 @@ export default function Rincones() {
         ) : (
           <SectionHeader heading="Rincones" />
         )}
-        {loading ? <Dialog message={message} /> : <Items items={items} />}
+        {isLoading ? (
+          <Dialog message={message} />
+        ) : (
+          <Items items={listRincones} />
+        )}
       </main>
     </>
   );

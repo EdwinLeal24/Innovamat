@@ -1,4 +1,4 @@
-import { getFavorites } from "../../services/handleFavorites";
+import { getFavorites } from "../../services/favorite/handleFavorites";
 import { useHistory } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { TALLERES_PATH } from "../../routing/paths";

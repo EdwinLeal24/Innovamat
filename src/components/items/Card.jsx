@@ -6,12 +6,14 @@ import {
   favoriteCard,
 } from "./Items.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { DETAIL_PATH } from "../../routing/paths";
+import { AppContext } from "../../context/AppContext";
 
 export default function Card({ source, addFavorites, removeFavorite }) {
+  const { getSource } = useContext(AppContext);
   const { id, image, tag, title, description } = source;
 
   const [isFavorite, setIsFavorite] = useState(false);
@@ -20,6 +22,10 @@ export default function Card({ source, addFavorites, removeFavorite }) {
   const addFavorite = () => {
     setIsFavorite(!isFavorite);
     addFavorites(source);
+  };
+
+  const changeSource = async () => {
+    await getSource(id);
   };
 
   const location = useLocation();
@@ -35,7 +41,7 @@ export default function Card({ source, addFavorites, removeFavorite }) {
       onMouseLeave={() => setIsHover(false)}
     >
       <Link to={`${DETAIL_PATH}/${id}`}>
-        <div>
+        <div onClick={changeSource}>
           <img src={image} alt={("image", tag)} className={cardImage} />
           <h4 className={cardTitle}>{title}</h4>
           <p className={cardDescription}>{description}</p>
