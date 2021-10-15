@@ -1,9 +1,9 @@
 # Innovamat
 
-El objetivo del proyecto es dar a los alumnos la mejor solución para que puedan disponer de los recursos de la manera más fácil posible. 
-En esta web el alumno puede navegar para encontrar los recursos según su categoría, ordenarlos alfabeticamente y añadirlos a una lista de favoritos.
+El objetivo del proyecto es dar a los alumnos la mejor solución para que puedan disponer de los recursos de una manera comoda y sencilla. 
+En esta web el alumno puede navegar para encontrar los recursos según su categoría, ordenarlos alfabeticamente o añadirlos a una lista de favoritos.
 
-https://innovamat-deploy.vercel.app/
+https://innovamat.vercel.app/
 
 ## Comenzando 🚀
 
@@ -34,8 +34,12 @@ src
  ┃ ┃ ┣ GridCards.jsx
  ┃ ┃ ┣ Items.jsx
  ┃ ┃ ┗ Items.module.css
+ ┣ context
+ ┃ ┣ AppContext.jsx
+ ┃ ┣ actions.js
+ ┃ ┣ appReducer.js
+ ┃ ┗ types.js
  ┣ hooks
- ┃ ┣ useFetch.js
  ┃ ┗ useWindowWidth.js
  ┣ pages
  ┃ ┣ detail
@@ -57,7 +61,12 @@ src
  ┃ ┣ paths.js
  ┃ ┗ router.js
  ┣ services
- ┃ ┗ handleFavorites.js
+ ┃ ┣ api
+ ┃ ┃ ┣ api.js
+ ┃ ┃ ┗ httpManager.js
+ ┃ ┣ favorite
+ ┃ ┃ ┗ handleFavorites.js
+ ┃ ┗ service.js
  ┣ icon.png
  ┣ index.css
  ┗ main.jsx
@@ -66,12 +75,17 @@ src
 ### Components
 Guarda cada uno de los componentes que componen la aplicación ordenados por subcarpetas
 
+### Context
+En esta carpeta encontraras todo lo relacionado con el store de la app. He separado en diferentes archivos las acciones, los tipos y los dispatch. A medida que vaya creciendo la aplicacción se podría separar tambien por modulos. He decidido utilizar los patrones Redux porque en cuanto el proyeccto se haga más grande será mas facil controlarla desde un estado global. 
+
 ### Hooks
-Se encuentran los custom hooks. Para este proyecto he creado dos hooks, uno que se encarga de hacer las peticiones HTTP y otro hook que he utilizado para saber el risize 
-de la pantalla para la versión movil.
+He creado un hook para saber el size de la pantalla para la versión mobile. En caso de querer crear mas hook se guardarian en esta carpeta.
 
 ### Pages
-Cada archivo en esta carpeta es una ruta del proyecto excepto el index que se encarga de hacer las importaciones de cada una de ellas que luego seran usadas en el router.
+Cada archivo en esta carpeta es una ruta del proyecto, excepto el index que se encarga de hacer las importaciones de cada una de ellas en el momento en que se necesite. 
+
+### Services
+Estan los servicios que se usaran en la aplicación, como por ejemplo las llamadas a la API y la instancia de axios. Cualquier petición a la base de datos, sea get, post, put.. se controlarían desde de aquí.
 
 ### routing
 Estan los archivos que controlan las rutas para simplificar la generación del componente switch a medida que crezca la aplicación
