@@ -19,7 +19,7 @@ export default function Favorites() {
         </button>
         <span>Favoritos</span>
       </h1>
-      {favorites.length ? (
+      {favorites && favorites.length ? (
         <GridCards resources={favorites} />
       ) : (
         <Dialog message={message} link={TALLERES_PATH} />

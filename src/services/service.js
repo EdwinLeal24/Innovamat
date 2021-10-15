@@ -2,7 +2,7 @@ import { httpManager } from "./api/httpManager";
 
 const TALLERES_URL = "/talleres";
 const RINCONES_URL = "/rincones";
-const RESOURCE_URL = "/resouasrce";
+const RESOURCE_URL = "/resource";
 
 export const getAllTalleres = async () => {
   try {
